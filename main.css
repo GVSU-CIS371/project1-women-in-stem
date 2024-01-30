@@ -1,7 +1,71 @@
-body,
-html {
-  /* height:100%; */
 
-  margin: 0px;
-  padding: 0px;
+/*this is just gonna reset all the styles and make sure there is not any underlying style*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* this makes sure that our web app takes up the entire screen*/
+body, html {
+  height: 100%;
+}
+
+/* this will prevent the horizontal scroll*/
+body{
+  overflow-x: hidden;
+}
+
+/*this just styles the header, makes sure it can wrap if needed and makes sure everything is in line*/
+header {
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 1em;
+  background-color: burlywood;/*idk if this is the same color as the example i just guessed*/
+}
+
+/*adds padding to the nav section*/
+nav {
+  padding: 0.5em;
+}
+
+/*styles the unordered list as a whole*/
+nav ul {
+  list-style-type: none;
+  display: flex;
+  gap: 1em;
+  flex-wrap: wrap; 
+}
+
+/*styles the individual elements wihtin the nav list*/
+nav li {
+  padding: 0.5em; 
+}
+
+/*i added a transition because i didnt like how it look plain*/
+nav a {
+  text-decoration: none;
+  color: black; 
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+/*adds the underline and color when hovered*/
+nav a:hover {
+  color:blue; 
+  text-decoration: underline; 
+}
+
+
+/* styles the main content, THIS WILL NEED TO BE EDITED */
+main {
+  padding: 1em;
+}
+
+/*just styles the footer, centers it and adds color*/
+footer {
+  padding: 1em;
+  background-color: burlywood;
+  text-align: center;
 }
