@@ -60,7 +60,15 @@ nav a:hover {
 
 /* styles the main content, THIS WILL NEED TO BE EDITED */
 main {
+  display: flex;
+  flex-wrap: wrap;
   padding: 1em;
+}
+
+.store-item {
+  display: flex;
+  flex-direction: column;
+  width: calc(25%);
 }
 
 /*just styles the footer, centers it and adds color*/
