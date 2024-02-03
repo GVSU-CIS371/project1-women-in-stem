@@ -1,29 +1,27 @@
-
-/*this is just gonna reset all the styles and make sure there is not any underlying style*/
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* this makes sure that our web app takes up the entire screen*/
+/*makes sure it takes up the entire screen*/
 body, html {
   height: 100%;
+  margin: 0;
+  padding: 0;
 }
-
-/* this will prevent the horizontal scroll*/
-body{
+/*creates our grid of 3 rows and gets rid of horizontal scroll*/
+body {
   overflow-x: hidden;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 100%;
 }
 
-/*this just styles the header, makes sure it can wrap if needed and makes sure everything is in line*/
+/*this just styles the header, 
+makes sure it can wrap if needed 
+and makes sure everything is in line*/
 header {
   display: flex;
   flex-wrap: wrap; 
   justify-content: space-between; 
   align-items: center; 
   padding: 1em;
-  background-color: burlywood;/*idk if this is the same color as the example i just guessed*/
+  background-color: burlywood;
 }
 
 /*adds padding to the nav section*/
@@ -43,7 +41,6 @@ nav ul {
 nav li {
   padding: 0.5em; 
 }
-
 /*i added a transition because i didnt like how it look plain*/
 nav a {
   text-decoration: none;
@@ -53,25 +50,51 @@ nav a {
 
 /*adds the underline and color when hovered*/
 nav a:hover {
-  color:blue; 
+  color: blue; 
   text-decoration: underline; 
 }
 
-
-/* styles the main content, THIS WILL NEED TO BE EDITED */
+/* main grid layout*/
 main {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 1em;
   padding: 1em;
 }
 
+/*creates the borders and vertically aligns everything*/
 .store-item {
-  display: flex;
+  display: inline-block;
   flex-direction: column;
-  width: calc(25%);
+  border: 1px solid #0e0202;
+  padding: 1em;
+  margin-bottom: 1em;
+  height: 450px;
+  width: 250px;
 }
 
-/*just styles the footer, centers it and adds color*/
+/*fixed image height and weight so that they are all the same*/
+.store-item img {
+  width: 100%;
+  height: 200px; /* Adjust as necessary */
+  object-fit:contain;
+  margin-bottom: 1em;
+}
+
+/*Aligns the descriptions to the left*/
+.store-item p {
+  text-align: left;
+  margin-bottom: 0.5em;
+  flex-grow: 1;
+}
+/* span elements all in a line*/
+.store-item span {
+  margin-right: 10px; /* Adds space to the right of each span */
+  display: inline-block;
+  text-align: end;
+  
+}
+
 footer {
   padding: 1em;
   background-color: burlywood;
